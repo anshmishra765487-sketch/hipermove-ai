@@ -1,0 +1,97 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with fitness preferences and settings",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "displayName": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "email": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "fitnessGoal": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "experienceLevel": {
+          "type": "string",
+          "enum": ["beginner", "intermediate", "advanced"]
+        },
+        "dailySquatsTarget": {
+          "type": "number"
+        },
+        "soundEnabled": {
+          "type": "boolean"
+        },
+        "showAngles": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "required": ["userId", "displayName", "email"]
+    },
+    "WorkoutSession": {
+      "title": "WorkoutSession",
+      "description": "Recorded workout session with reps, duration, and tracking metrics",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "exerciseType": {
+          "type": "string",
+          "maxLength": 50
+        },
+        "exerciseName": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "repsCount": {
+          "type": "number"
+        },
+        "durationSeconds": {
+          "type": "number"
+        },
+        "minKneeAngle": {
+          "type": "number"
+        },
+        "trackingQuality": {
+          "type": "string",
+          "enum": ["optimal", "good", "intermittent"]
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "completedAt": {
+          "type": "string"
+        }
+      },
+      "required": ["userId", "exerciseType", "repsCount", "durationSeconds", "completedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Private user profile documents keyed by userId"
+    },
+    "/workouts/{workoutId}": {
+      "schema": "WorkoutSession",
+      "description": "Workout records with userId ownership"
+    }
+  }
+}

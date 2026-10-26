@@ -1,0 +1,10 @@
+{
+  "name": "HiperMove AI",
+  "description": "Move Smarter. Train Better. AI-powered real-time squat tracking and form analysis using local computer vision pose detection.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

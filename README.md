@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/33924374/README.md)
 # HiperMove AI — Move Smarter. Train Better.
 
 HiperMove AI is a next-generation web application that uses **client-side computer vision** (Google MediaPipe Pose Landmarker) to track squats in real-time through your webcam, accurately count repetitions, display movement phases and knee angles, provide educational form cues, and securely persist workout records with Cloud Firestore and Firebase Authentication.
